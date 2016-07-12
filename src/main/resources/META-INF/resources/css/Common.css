@@ -1,0 +1,45 @@
+table.btbHead {
+	border: 0px solid #d1d1d1;
+	width: 100%;
+	color: #333333;
+	padding: 3px;
+	margin: 0;
+}
+
+table.btbForm {
+	border: 1px solid #d1d1d1;
+	width: 100%;
+	color: #333333;
+	padding: 3px;
+	margin: 0;
+}
+
+table.btbForm td {
+	padding: 5px;
+}
+
+table.btb {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #d1d1d1;
+	border-collapse: collapse;
+	width: 100%
+}
+
+table.btb td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #d1d1d1;
+	background-color: #ffffff;
+}
+
+table th {
+	color: #FFFFFF;
+}
+
+.un{height:20px;width:195px;}
+
+.tbd{text-align:center;}

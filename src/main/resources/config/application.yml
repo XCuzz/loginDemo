@@ -1,0 +1,53 @@
+info:
+  app_name: c3::demo
+  app_version: 1.0.0
+server:
+  port: 8080
+spring:
+  freemarker:
+    suffix: .html
+    charset: UTF-8
+    content-type: text/html
+    exposeRequestAttributes: true
+    exposeSpringMacroHelpers: true
+    requestContextAttribute: requestContext
+    cache: false
+    settings:
+      template_update_delay: 0
+  aop:
+    auto: true
+    proxy-target-class: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: root
+    initialSize: 1
+    maxActive: 30
+    minIdle: 1
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    validationQuery: SELECT 1
+    filters: wall,stat
+    removeAbandoned: true
+    removeAbandonedTimeout: 1800
+    logAbandoned: true
+  jpa:
+    database_platform: org.hibernate.dialect.MySQLDialect
+    show_sql: true
+    generate_ddl: true
+    hibernate:
+      ddl_auto: update
+      naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+    properties:
+      hibernate:
+        format_sql: true
+        query.substitutions: true 1, false 0
+        default_batch_fetch_size: 16
+        max_fetch_depth: 2
+        bytecode.use_reflection_optimizer: true

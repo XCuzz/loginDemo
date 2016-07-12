@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        maven { url "http://maven.oschina.net/content/groups/public/" }
+        maven { url "http://repo.spring.io/libs-snapshot" }
+        maven { url 'http://dl.bintray.com/cjstehno/public'}
+        maven { url "https://plugins.gradle.org/m2/"}
+        mavenCentral()
+}
+    dependencies {
+        classpath 'gradle-templates:gradle-templates:1.5'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE'
+    }
+}
+
+apply plugin:'templates'
+
+allprojects {
+    apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
+	apply plugin: 'spring-boot'
+	
+    repositories {
+        maven { url "http://repository.jboss.org/nexus/content/groups/public/" }
+        maven { url "https://repository.apache.org/content/repositories/releases/" }
+        maven { url "https://repository.cloudera.com/artifactory/cloudera-repos/" }
+        //maven { url "http://maven.oschina.net/content/groups/public/" }
+        maven { url "http://repo.spring.io/libs-snapshot" }
+        
+        mavenCentral()
+        
+    }
+    
+	dependencies {
+	
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.3.3.RELEASE'
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.3.3.RELEASE'
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.3.3.RELEASE'
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.3.3.RELEASE'
+   		compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: '1.3.3.RELEASE'
+   		
+   	    //compile("com.h2database:h2")
+   	    //runtime("org.hsqldb:hsqldb")
+   	    //阿里开源数据库连接池
+		compile("com.alibaba:druid:1.0.16")
+		//postgresql数据库连接
+		compile("org.postgresql:postgresql:9.4-1205-jdbc41")
+   	    
+	}
+}
